@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="false"
+        android:label="U闲"
+        android:icon="@drawable/ic_launcher">
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="把闲鱼的 mtop 通道暴露给本机 App（ContentProvider 按需唤醒，不常驻）" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+
+        <activity
+            android:name=".RestartActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true" />
+        <provider
+            android:name="io.github.libxposed.service.XposedProvider"
+            android:authorities="com.xiandehuang.u.XposedService"
+            android:exported="true" />
+        <provider
+            android:name=".ScopeProbeProvider"
+            android:authorities="com.xiandehuang.u.scope"
+            android:exported="true" />
+    </application>
+</manifest>

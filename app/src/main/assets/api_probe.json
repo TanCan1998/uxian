@@ -1,0 +1,1050 @@
+{
+ "com.taobao.idle.get.config": {
+  "replay": "yes",
+  "why": "OK 292B"
+ },
+ "com.taobao.idle.get.nav.config": {
+  "replay": "yes",
+  "why": "OK 626B"
+ },
+ "com.taobao.idle.host.authorize": {
+  "replay": "yes",
+  "why": "OK 6785B"
+ },
+ "com.taobao.idle.location.update": {
+  "replay": "yes",
+  "why": "OK 124B"
+ },
+ "com.taobao.idle.user.alipay": {
+  "replay": "yes",
+  "why": "OK 85B"
+ },
+ "com.taobao.idle.user.init": {
+  "replay": "yes",
+  "why": "SUCCESS"
+ },
+ "mtop.alibaba.emas.publish.update.resource.get": {
+  "replay": "no",
+  "why": "IllegalStateException: ret=2 retType=null msg=platform is null respApi=mtop.alib"
+ },
+ "mtop.alibaba.idle.ad.account.airecharge.hastask": {
+  "replay": "yes",
+  "why": "OK 55B"
+ },
+ "mtop.alibaba.idle.ad.account.card.v2": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.alibaba.idle.isv.permission.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.alibaba.idle.mach.guide.items": {
+  "replay": "yes",
+  "why": "OK 85B"
+ },
+ "mtop.alibaba.idle.play.groupChat.entrance.query": {
+  "replay": "yes",
+  "why": "OK 25B"
+ },
+ "mtop.alibaba.idle.recycle.quote.list": {
+  "replay": "yes",
+  "why": "OK 1362B"
+ },
+ "mtop.alibaba.idle.shop.open.status.query": {
+  "replay": "yes",
+  "why": "OK 77B"
+ },
+ "mtop.alibaba.idle.user.medal.info.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.alibaba.mbis.address.list.withconfig": {
+  "replay": "yes",
+  "why": "OK 1799B"
+ },
+ "mtop.client.mudp.update": {
+  "replay": "yes",
+  "why": "OK 599B"
+ },
+ "mtop.common.getTimestamp": {
+  "replay": "yes",
+  "why": "OK 21B"
+ },
+ "mtop.gaia.nodejs.gaia.idle.data.gw.v2.activity.get": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.gaia.nodejs.gaia.idle.data.gw.v2.index.get": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.ad.expose": {
+  "replay": "yes",
+  "why": "OK 18B"
+ },
+ "mtop.idle.challenge.idleCoinSign.info": {
+  "replay": "yes",
+  "why": "OK 39B"
+ },
+ "mtop.idle.circle.user.circle.item.card.query": {
+  "replay": "yes",
+  "why": "OK 94B"
+ },
+ "mtop.idle.delivery.data.query": {
+  "replay": "yes",
+  "why": "OK 21355B"
+ },
+ "mtop.idle.idleadv.app.launch.report": {
+  "replay": "yes",
+  "why": "OK 28B"
+ },
+ "mtop.idle.idleadv.code.restore": {
+  "replay": "yes",
+  "why": "OK 25B"
+ },
+ "mtop.idle.idleadv.scene.restore": {
+  "replay": "yes",
+  "why": "OK 37B"
+ },
+ "mtop.idle.idleitem.draft.list": {
+  "replay": "yes",
+  "why": "OK 62B"
+ },
+ "mtop.idle.idleitem.publish.preget": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.interact.cycle.challenge.info": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.idle.interact.mac.user.launch": {
+  "replay": "yes",
+  "why": "OK 54B"
+ },
+ "mtop.idle.interact.notice.show": {
+  "replay": "yes",
+  "why": "OK 13B"
+ },
+ "mtop.idle.interact.time.exchange.info": {
+  "replay": "no",
+  "why": "FAIL_BIZ_NOT_TARGET_USER"
+ },
+ "mtop.idle.item.publish.service.cards.list": {
+  "replay": "no",
+  "why": "ANDROID_SYS_PARAM_TOO_LONG"
+ },
+ "mtop.idle.message.head.info": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.mini.game.postpurchase.view.query": {
+  "replay": "no",
+  "why": "FAIL_SYS_INVALID_HTTP_METHOD"
+ },
+ "mtop.idle.multi.day.challenge.info": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.play.behavior.relation.query": {
+  "replay": "no",
+  "why": "FAIL_BIZ_RESULT_NULL"
+ },
+ "mtop.idle.play.inbox.fetch": {
+  "replay": "yes",
+  "why": "OK 16B"
+ },
+ "mtop.idle.promotions.activity.seckill.common.info.query": {
+  "replay": "yes",
+  "why": "OK 1964B"
+ },
+ "mtop.idle.promotions.coupon.channel.czzx.item.query": {
+  "replay": "yes",
+  "why": "OK 1779B"
+ },
+ "mtop.idle.recycle.customer.ab.execute": {
+  "replay": "yes",
+  "why": "OK 117B"
+ },
+ "mtop.idle.recycle.customer.auction.record": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.recycle.customer.coupon.issue": {
+  "replay": "yes",
+  "why": "OK 20B"
+ },
+ "mtop.idle.recycle.customer.coupon.max.get": {
+  "replay": "yes",
+  "why": "OK 465B"
+ },
+ "mtop.idle.recycle.customer.coupon.pendant": {
+  "replay": "yes",
+  "why": "OK 378B"
+ },
+ "mtop.idle.recycle.customer.coupon.pendant2": {
+  "replay": "yes",
+  "why": "OK 358B"
+ },
+ "mtop.idle.recycle.customer.home.page.entrance": {
+  "replay": "yes",
+  "why": "OK 1934B"
+ },
+ "mtop.idle.recycle.customer.quote.atmosphere.marquee": {
+  "replay": "yes",
+  "why": "OK 763B"
+ },
+ "mtop.idle.recycle.customer.quote.devicespuquote": {
+  "replay": "yes",
+  "why": "OK 934B"
+ },
+ "mtop.idle.recycle.customer.quote.get": {
+  "replay": "yes",
+  "why": "OK 1645B"
+ },
+ "mtop.idle.recycle.customer.quote.getquotelist": {
+  "replay": "yes",
+  "why": "OK 1392B"
+ },
+ "mtop.idle.recycle.customer.quote.submit": {
+  "replay": "yes",
+  "why": "OK 71B"
+ },
+ "mtop.idle.recycle.customer.ship.address.check": {
+  "replay": "yes",
+  "why": "OK 46B"
+ },
+ "mtop.idle.recycle.customer.ship.time.slot.get": {
+  "replay": "yes",
+  "why": "OK 1977B"
+ },
+ "mtop.idle.recycle.customer.tborder.list": {
+  "replay": "yes",
+  "why": "OK 1911B"
+ },
+ "mtop.idle.trade.message.headinfo": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.trade.other.order.entry": {
+  "replay": "yes",
+  "why": "OK 311B"
+ },
+ "mtop.idle.user.asset.items": {
+  "replay": "yes",
+  "why": "OK 1889B"
+ },
+ "mtop.idle.user.asset.tab": {
+  "replay": "yes",
+  "why": "OK 751B"
+ },
+ "mtop.idle.user.page.credit": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.user.page.head": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.user.page.more": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.idle.user.page.my.adapter": {
+  "replay": "yes",
+  "why": "OK 29338B"
+ },
+ "mtop.idle.user.page.profile": {
+  "replay": "yes",
+  "why": "OK 98B"
+ },
+ "mtop.idle.user.page.setting": {
+  "replay": "yes",
+  "why": "OK 1715B"
+ },
+ "mtop.idle.user.setting.get": {
+  "replay": "yes",
+  "why": "OK 18B"
+ },
+ "mtop.idle.user.setting.sync": {
+  "replay": "yes",
+  "why": "OK 17B"
+ },
+ "mtop.idle.user.shop.act.query": {
+  "replay": "yes",
+  "why": "OK 1411B"
+ },
+ "mtop.idle.user.simple": {
+  "replay": "yes",
+  "why": "OK 52B"
+ },
+ "mtop.idle.user.timeline.list": {
+  "replay": "yes",
+  "why": "OK 1723B"
+ },
+ "mtop.idle.x.message.session.arouse.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.baichuan.smb.get": {
+  "replay": "yes",
+  "why": "OK 1945B"
+ },
+ "mtop.taobao.edgecomputer.query": {
+  "replay": "no",
+  "why": "FAIL_BIZ_INVALID_QUERY_PARAM"
+ },
+ "mtop.taobao.heracles.inno.interactive.voice.token.query": {
+  "replay": "yes",
+  "why": "OK 189B"
+ },
+ "mtop.taobao.idle.ab.config.get": {
+  "replay": "yes",
+  "why": "OK 146B"
+ },
+ "mtop.taobao.idle.activity.sell.seller.recommend": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.ad.activity.detail.rendering": {
+  "replay": "no",
+  "why": "NO_APPLY_ACTIVITY_PERMISSION"
+ },
+ "mtop.taobao.idle.ad.activity.diagnosis.query": {
+  "replay": "yes",
+  "why": "OK 30B"
+ },
+ "mtop.taobao.idle.ad.automation.rule.get": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.ad.customer.diagnose.query": {
+  "replay": "yes",
+  "why": "OK 31B"
+ },
+ "mtop.taobao.idle.ad.game.recycle.product.detail": {
+  "replay": "yes",
+  "why": "OK 94B"
+ },
+ "mtop.taobao.idle.ad.home": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.ad.home.activity": {
+  "replay": "yes",
+  "why": "OK 226B"
+ },
+ "mtop.taobao.idle.ad.item.activity.rendering": {
+  "replay": "yes",
+  "why": "OK 81B"
+ },
+ "mtop.taobao.idle.ad.lead.hub.product.detail": {
+  "replay": "yes",
+  "why": "OK 34B"
+ },
+ "mtop.taobao.idle.ad.local.car.activity.detail": {
+  "replay": "yes",
+  "why": "OK 184B"
+ },
+ "mtop.taobao.idle.ad.member.data.query": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.ad.message.unread.info": {
+  "replay": "yes",
+  "why": "OK 20B"
+ },
+ "mtop.taobao.idle.ad.new.simple.order.detail": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.ad.new.simple.order.retain.check": {
+  "replay": "yes",
+  "why": "OK 75B"
+ },
+ "mtop.taobao.idle.ad.promotion.guid": {
+  "replay": "yes",
+  "why": "OK 30B"
+ },
+ "mtop.taobao.idle.ad.protocol.query": {
+  "replay": "yes",
+  "why": "OK 215B"
+ },
+ "mtop.taobao.idle.ai.apps.abtest.buyer.assistant.hit.check": {
+  "replay": "yes",
+  "why": "OK 80B"
+ },
+ "mtop.taobao.idle.ai.apps.buyer.agent.gray": {
+  "replay": "yes",
+  "why": "OK 19B"
+ },
+ "mtop.taobao.idle.ai.apps.buyer.task.behavior.report": {
+  "replay": "no",
+  "why": "ANDROID_SYS_PARAM_TOO_LONG"
+ },
+ "mtop.taobao.idle.ai.apps.search": {
+  "replay": "yes",
+  "why": "OK 92B"
+ },
+ "mtop.taobao.idle.attention.list": {
+  "replay": "yes",
+  "why": "OK 1371B"
+ },
+ "mtop.taobao.idle.auge.crowd.hit": {
+  "replay": "yes",
+  "why": "OK 90B"
+ },
+ "mtop.taobao.idle.auge.full.show": {
+  "replay": "yes",
+  "why": "OK 105B"
+ },
+ "mtop.taobao.idle.awesome.detail.unit": {
+  "replay": "yes",
+  "why": "OK 1985B"
+ },
+ "mtop.taobao.idle.bill.crowd.query": {
+  "replay": "yes",
+  "why": "OK 862B"
+ },
+ "mtop.taobao.idle.bootstrap.config.get": {
+  "replay": "yes",
+  "why": "OK 127B"
+ },
+ "mtop.taobao.idle.bubble.show": {
+  "replay": "yes",
+  "why": "OK 76B"
+ },
+ "mtop.taobao.idle.cco.hall.home": {
+  "replay": "yes",
+  "why": "OK 1817B"
+ },
+ "mtop.taobao.idle.cco.hall.service.progress.list": {
+  "replay": "yes",
+  "why": "OK 45B"
+ },
+ "mtop.taobao.idle.circle.1ton.recommend": {
+  "replay": "yes",
+  "why": "OK 60B"
+ },
+ "mtop.taobao.idle.circle.benefit.detail": {
+  "replay": "yes",
+  "why": "OK 872B"
+ },
+ "mtop.taobao.idle.circle.benefit.exchange": {
+  "replay": "yes",
+  "why": "OK 72B"
+ },
+ "mtop.taobao.idle.circle.fans.join": {
+  "replay": "yes",
+  "why": "OK 300B"
+ },
+ "mtop.taobao.idle.circle.level.home": {
+  "replay": "yes",
+  "why": "OK 1849B"
+ },
+ "mtop.taobao.idle.circle.main.page": {
+  "replay": "yes",
+  "why": "OK 1973B"
+ },
+ "mtop.taobao.idle.circle.main.tab": {
+  "replay": "yes",
+  "why": "OK 1949B"
+ },
+ "mtop.taobao.idle.circle.point.sign.in": {
+  "replay": "yes",
+  "why": "OK 75B"
+ },
+ "mtop.taobao.idle.circle.switch.list": {
+  "replay": "yes",
+  "why": "OK 1581B"
+ },
+ "mtop.taobao.idle.comment.list": {
+  "replay": "yes",
+  "why": "OK 1865B"
+ },
+ "mtop.taobao.idle.detail.preget": {
+  "replay": "yes",
+  "why": "OK 196B"
+ },
+ "mtop.taobao.idle.device.report": {
+  "replay": "yes",
+  "why": "OK 17B"
+ },
+ "mtop.taobao.idle.division.all.get": {
+  "replay": "yes",
+  "why": "OK 1067B"
+ },
+ "mtop.taobao.idle.division.by.gps": {
+  "replay": "yes",
+  "why": "OK 224B"
+ },
+ "mtop.taobao.idle.division.getbyid": {
+  "replay": "yes",
+  "why": "OK 173B"
+ },
+ "mtop.taobao.idle.favor.item.list": {
+  "replay": "yes",
+  "why": "OK 1939B"
+ },
+ "mtop.taobao.idle.fci.auge.crowd.check": {
+  "replay": "yes",
+  "why": "OK 81B"
+ },
+ "mtop.taobao.idle.fci.coupon.tags": {
+  "replay": "yes",
+  "why": "OK 562B"
+ },
+ "mtop.taobao.idle.fci.home.survey.population.check": {
+  "replay": "yes",
+  "why": "OK 81B"
+ },
+ "mtop.taobao.idle.fci.model.download": {
+  "replay": "yes",
+  "why": "OK 69B"
+ },
+ "mtop.taobao.idle.fci.recommend.reason.population.check": {
+  "replay": "yes",
+  "why": "OK 313B"
+ },
+ "mtop.taobao.idle.forest.animal.benefit.list": {
+  "replay": "yes",
+  "why": "OK 1953B"
+ },
+ "mtop.taobao.idle.forest.animal.benefit.material": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.forest.animal.list": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.forest.animal.open": {
+  "replay": "no",
+  "why": "FAIL_BIZ_SAME_ANIMAL"
+ },
+ "mtop.taobao.idle.forest.energy.issue": {
+  "replay": "no",
+  "why": "FAIL_BIZ_SERVER_ERROR"
+ },
+ "mtop.taobao.idle.forest.energy.list": {
+  "replay": "yes",
+  "why": "OK 50B"
+ },
+ "mtop.taobao.idle.forest.feed.task.extra": {
+  "replay": "yes",
+  "why": "OK 46B"
+ },
+ "mtop.taobao.idle.forest.head.extra": {
+  "replay": "yes",
+  "why": "OK 1953B"
+ },
+ "mtop.taobao.idle.forest.shoppingmall.extra": {
+  "replay": "yes",
+  "why": "OK 156B"
+ },
+ "mtop.taobao.idle.fun.follow.widget.fatigue": {
+  "replay": "yes",
+  "why": "OK 119B"
+ },
+ "mtop.taobao.idle.fun.personal.collection.count": {
+  "replay": "yes",
+  "why": "OK 469B"
+ },
+ "mtop.taobao.idle.fun.post.search": {
+  "replay": "yes",
+  "why": "OK 1985B"
+ },
+ "mtop.taobao.idle.gamecenter.degrade.list": {
+  "replay": "yes",
+  "why": "OK 42B"
+ },
+ "mtop.taobao.idle.home.config": {
+  "replay": "yes",
+  "why": "OK 131B"
+ },
+ "mtop.taobao.idle.homehint.list": {
+  "replay": "yes",
+  "why": "OK 333B"
+ },
+ "mtop.taobao.idle.house.query.subscribe.info": {
+  "replay": "yes",
+  "why": "OK 120B"
+ },
+ "mtop.taobao.idle.house.query.subscribe.template": {
+  "replay": "yes",
+  "why": "OK 1755B"
+ },
+ "mtop.taobao.idle.house.sec.pattern.words": {
+  "replay": "yes",
+  "why": "OK 29B"
+ },
+ "mtop.taobao.idle.item.buy.feeds": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.item.management.query": {
+  "replay": "yes",
+  "why": "OK 383B"
+ },
+ "mtop.taobao.idle.item.predict.loadmore": {
+  "replay": "yes",
+  "why": "OK 366B"
+ },
+ "mtop.taobao.idle.item.recommend.list": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.item.recommend.tab": {
+  "replay": "yes",
+  "why": "OK 1337B"
+ },
+ "mtop.taobao.idle.item.resell.channel": {
+  "replay": "yes",
+  "why": "OK 40853B"
+ },
+ "mtop.taobao.idle.item.resell.channel.ab.config": {
+  "replay": "yes",
+  "why": "OK 16B"
+ },
+ "mtop.taobao.idle.item.resell.channel.tablist": {
+  "replay": "yes",
+  "why": "OK 83B"
+ },
+ "mtop.taobao.idle.item.user.question.query": {
+  "replay": "yes",
+  "why": "OK 84B"
+ },
+ "mtop.taobao.idle.joy.community.activity.task.award": {
+  "replay": "no",
+  "why": "FAIL_BIZ_ACTIVITY_TASK_CANNOT_AWARD"
+ },
+ "mtop.taobao.idle.kgraph.property.recommend": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.local.config": {
+  "replay": "yes",
+  "why": "OK 1919B"
+ },
+ "mtop.taobao.idle.local.home": {
+  "replay": "yes",
+  "why": "OK 1953B"
+ },
+ "mtop.taobao.idle.local.home.feeds": {
+  "replay": "yes",
+  "why": "OK 1819B"
+ },
+ "mtop.taobao.idle.local.home.top": {
+  "replay": "yes",
+  "why": "OK 1945B"
+ },
+ "mtop.taobao.idle.local.near.by.corner.info": {
+  "replay": "yes",
+  "why": "OK 119B"
+ },
+ "mtop.taobao.idle.local.poi.get": {
+  "replay": "yes",
+  "why": "OK 261B"
+ },
+ "mtop.taobao.idle.mach.advertise.batch.output": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.mach.advertise.output": {
+  "replay": "yes",
+  "why": "OK 288B"
+ },
+ "mtop.taobao.idle.main.search.config": {
+  "replay": "yes",
+  "why": "OK 89B"
+ },
+ "mtop.taobao.idle.merchant.business.qualification.entry.query": {
+  "replay": "yes",
+  "why": "OK 625B"
+ },
+ "mtop.taobao.idle.message.fci.js.fetch": {
+  "replay": "yes",
+  "why": "OK 2233B"
+ },
+ "mtop.taobao.idle.mini.game.channel.atmosphere.query": {
+  "replay": "yes",
+  "why": "OK 498B"
+ },
+ "mtop.taobao.idle.mini.game.coin.delivery.query": {
+  "replay": "yes",
+  "why": "OK 141B"
+ },
+ "mtop.taobao.idle.mini.game.coin.exchange.enable.query": {
+  "replay": "yes",
+  "why": "OK 72B"
+ },
+ "mtop.taobao.idle.mini.game.delivery.query": {
+  "replay": "yes",
+  "why": "OK 1391B"
+ },
+ "mtop.taobao.idle.mini.game.new.user.task.query": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.mini.game.point.withdraw.query": {
+  "replay": "yes",
+  "why": "OK 330B"
+ },
+ "mtop.taobao.idle.mini.game.recent.visit.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.mini.game.runtime.info": {
+  "replay": "no",
+  "why": "INVALID_PARAM"
+ },
+ "mtop.taobao.idle.mini.game.service.subscription.query": {
+  "replay": "yes",
+  "why": "OK 35B"
+ },
+ "mtop.taobao.idle.mini.game.sign.in.query": {
+  "replay": "yes",
+  "why": "OK 1354B"
+ },
+ "mtop.taobao.idle.mini.game.task.center.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.mini.game.task.channel.revisit.complete": {
+  "replay": "yes",
+  "why": "OK 18B"
+ },
+ "mtop.taobao.idle.oliver.batch.issue": {
+  "replay": "no",
+  "why": "FAIL_BIZ_NO_ENOUGH_BALANCE_ERROR"
+ },
+ "mtop.taobao.idle.oliver.benefit.record": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.oliver.show": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.play.prop.list": {
+  "replay": "yes",
+  "why": "OK 52B"
+ },
+ "mtop.taobao.idle.play.prop.use": {
+  "replay": "no",
+  "why": "FAIL_BIZ_PLAY_IDEMPOTENT_ERROR"
+ },
+ "mtop.taobao.idle.play.sign.in": {
+  "replay": "no",
+  "why": "FAIL_BIZ_PLAY_SIGNED_IN"
+ },
+ "mtop.taobao.idle.play.sign.in.home": {
+  "replay": "yes",
+  "why": "OK 579B"
+ },
+ "mtop.taobao.idle.playboy.recommend": {
+  "replay": "yes",
+  "why": "OK 1959B"
+ },
+ "mtop.taobao.idle.point.pointbank.shoppingmall": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.point.pointbank.shoppingmall.benefitdetail": {
+  "replay": "no",
+  "why": "FAIL_BIZ_SERVER_ERROR"
+ },
+ "mtop.taobao.idle.publish.button.list": {
+  "replay": "yes",
+  "why": "OK 4601B"
+ },
+ "mtop.taobao.idle.publish.guide.list": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.rate.list": {
+  "replay": "yes",
+  "why": "OK 1909B"
+ },
+ "mtop.taobao.idle.recycle.nextSpuNav.get": {
+  "replay": "yes",
+  "why": "OK 1985B"
+ },
+ "mtop.taobao.idle.rtc.config.get": {
+  "replay": "yes",
+  "why": "OK 74B"
+ },
+ "mtop.taobao.idle.rule.config": {
+  "replay": "yes",
+  "why": "OK 2317B"
+ },
+ "mtop.taobao.idle.subscribe.get": {
+  "replay": "yes",
+  "why": "OK 37B"
+ },
+ "mtop.taobao.idle.task.getolivertaskbenefit": {
+  "replay": "yes",
+  "why": "OK 1070B"
+ },
+ "mtop.taobao.idle.task.getolivertaskdetail": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.task.queryolivertasklist": {
+  "replay": "yes",
+  "why": "OK 1921B"
+ },
+ "mtop.taobao.idle.task.uploadOliverTaskTrigger": {
+  "replay": "no",
+  "why": "FAIL_BIZ_COMMON_PARAM_ILLEGAL"
+ },
+ "mtop.taobao.idle.ticket.channel.feed.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idle.trade.bought.get": {
+  "replay": "yes",
+  "why": "OK 106B"
+ },
+ "mtop.taobao.idle.trade.recycle.coupon.tips": {
+  "replay": "yes",
+  "why": "OK 1476B"
+ },
+ "mtop.taobao.idle.trade.recycle.sold.get": {
+  "replay": "yes",
+  "why": "OK 1647B"
+ },
+ "mtop.taobao.idle.treasure.hunt.map.game.refresh": {
+  "replay": "yes",
+  "why": "OK 301B"
+ },
+ "mtop.taobao.idle.treasure.hunt.map.init": {
+  "replay": "no",
+  "why": "FAIL_BIZ_PARAMETER_ERROR"
+ },
+ "mtop.taobao.idle.treasure.hunt.map.roll": {
+  "replay": "no",
+  "why": "FAIL_BIZ_PARAMETER_ERROR"
+ },
+ "mtop.taobao.idle.treasure.layout.info": {
+  "replay": "yes",
+  "why": "OK 8201B"
+ },
+ "mtop.taobao.idle.user.action.strategy": {
+  "replay": "yes",
+  "why": "OK 44B"
+ },
+ "mtop.taobao.idle.user.check": {
+  "replay": "yes",
+  "why": "OK 78B"
+ },
+ "mtop.taobao.idle.user.info.get": {
+  "replay": "yes",
+  "why": "OK 1789B"
+ },
+ "mtop.taobao.idle.user.pulloff.items": {
+  "replay": "yes",
+  "why": "OK 105B"
+ },
+ "mtop.taobao.idle.user.strategy.list": {
+  "replay": "yes",
+  "why": "OK 10369B"
+ },
+ "mtop.taobao.idle.user.strategy.report": {
+  "replay": "yes",
+  "why": "SUCCESS"
+ },
+ "mtop.taobao.idle.user.widget.show": {
+  "replay": "yes",
+  "why": "OK 1885B"
+ },
+ "mtop.taobao.idle.user.widget.wear": {
+  "replay": "yes",
+  "why": "OK 110B"
+ },
+ "mtop.taobao.idle.ut.log.config.get": {
+  "replay": "yes",
+  "why": "OK 834B"
+ },
+ "mtop.taobao.idle.ut.log.report": {
+  "replay": "no",
+  "why": "FAIL_SYS_INVALID_HTTP_METHOD"
+ },
+ "mtop.taobao.idle.xyh.item.list": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idlecommerce.splash.ads": {
+  "replay": "yes",
+  "why": "OK 28B"
+ },
+ "mtop.taobao.idlecommerce.splash.async.ads": {
+  "replay": "yes",
+  "why": "OK 28B"
+ },
+ "mtop.taobao.idlehome.home.circle.list": {
+  "replay": "yes",
+  "why": "OK 68114B"
+ },
+ "mtop.taobao.idlehome.home.nextfresh": {
+  "replay": "yes",
+  "why": "OK 652788B"
+ },
+ "mtop.taobao.idlehome.magic.home.page.list": {
+  "replay": "yes",
+  "why": "OK 1965B"
+ },
+ "mtop.taobao.idlehome.user.operator.tracker": {
+  "replay": "yes",
+  "why": "OK 4454B"
+ },
+ "mtop.taobao.idleitem.badwords.prepubcheck": {
+  "replay": "yes",
+  "why": "OK 212B"
+ },
+ "mtop.taobao.idleitem.prepublish.check": {
+  "replay": "yes",
+  "why": "OK 130B"
+ },
+ "mtop.taobao.idlemessage.channel.notice.query": {
+  "replay": "yes",
+  "why": "OK 14B"
+ },
+ "mtop.taobao.idlemessage.common.session.event.report": {
+  "replay": "yes",
+  "why": "OK 35B"
+ },
+ "mtop.taobao.idlemessage.extra.message.query": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idlemessage.face.categories.load": {
+  "replay": "yes",
+  "why": "OK 30B"
+ },
+ "mtop.taobao.idlemessage.face.emoji.load": {
+  "replay": "yes",
+  "why": "OK 47991B"
+ },
+ "mtop.taobao.idlemessage.instant.log": {
+  "replay": "no",
+  "why": "FAIL_SYS_INVALID_HTTP_METHOD"
+ },
+ "mtop.taobao.idlemessage.message.sync": {
+  "replay": "yes",
+  "why": "OK 1921B"
+ },
+ "mtop.taobao.idlemessage.profile.notice.list": {
+  "replay": "yes",
+  "why": "OK 1120B"
+ },
+ "mtop.taobao.idlemessage.receive.classify.query": {
+  "replay": "yes",
+  "why": "OK 22B"
+ },
+ "mtop.taobao.idlemessage.relation.message.read": {
+  "replay": "no",
+  "why": "FAIL_BIZ_MSG_NOT_FOUND"
+ },
+ "mtop.taobao.idlemessage.riskmsg.get": {
+  "replay": "yes",
+  "why": "OK 104B"
+ },
+ "mtop.taobao.idlemessage.session.extension.query": {
+  "replay": "yes",
+  "why": "OK 77B"
+ },
+ "mtop.taobao.idlemessage.session.service.headinfo": {
+  "replay": "yes",
+  "why": "OK 409B"
+ },
+ "mtop.taobao.idlemessage.session.sync": {
+  "replay": "yes",
+  "why": "OK 13421B"
+ },
+ "mtop.taobao.idlemessage.squad.tag.query": {
+  "replay": "yes",
+  "why": "OK 19B"
+ },
+ "mtop.taobao.idlemessage.super.top.session.query": {
+  "replay": "yes",
+  "why": "OK 69B"
+ },
+ "mtop.taobao.idlemessage.user.query": {
+  "replay": "yes",
+  "why": "OK 378B"
+ },
+ "mtop.taobao.idlemessage.user.query.top.resource": {
+  "replay": "yes",
+  "why": "SUCCESS"
+ },
+ "mtop.taobao.idlemtopsearch.detailpage.search.shade": {
+  "replay": "yes",
+  "why": "OK 108B"
+ },
+ "mtop.taobao.idlemtopsearch.item.search.activate": {
+  "replay": "yes",
+  "why": "OK 359B"
+ },
+ "mtop.taobao.idlemtopsearch.market.dealprice": {
+  "replay": "no",
+  "why": "FAIL_BIZ_interceptor_unknow_err"
+ },
+ "mtop.taobao.idlemtopsearch.search": {
+  "replay": "no",
+  "why": "FAIL_BIZ_COMMON_PARAM_ILLEGAL"
+ },
+ "mtop.taobao.idlemtopsearch.search.activate.tablist": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idlemtopsearch.search.discover": {
+  "replay": "yes",
+  "why": "OK 401B"
+ },
+ "mtop.taobao.idlemtopsearch.search.shade": {
+  "replay": "yes",
+  "why": "OK 434B"
+ },
+ "mtop.taobao.idlemtopsearch.search.suggest": {
+  "replay": "yes",
+  "why": "OK 182B"
+ },
+ "mtop.taobao.idlemtopsearch.user.search": {
+  "replay": "no",
+  "why": "FAIL_BIZ_COMMON_SYSTEM_ERROR2"
+ },
+ "mtop.taobao.idlemtopsearch.userfollow.query": {
+  "replay": "yes",
+  "why": "OK 136B"
+ },
+ "mtop.taobao.idlemtopsearch.userpicfollow.query": {
+  "replay": "yes",
+  "why": "OK 51B"
+ },
+ "mtop.taobao.idlemtopsearch.windvane.query": {
+  "replay": "yes",
+  "why": "OK 1901B"
+ },
+ "mtop.taobao.idletem.publish.cpv.change.strategy": {
+  "replay": "no",
+  "why": "ANDROID_SYS_PARAM_TOO_LONG"
+ },
+ "mtop.taobao.paramservice.request": {
+  "replay": "yes",
+  "why": "OK 31B"
+ },
+ "mtop.taobao.pentaprism.scene.trigger": {
+  "replay": "yes",
+  "why": "OK 127B"
+ },
+ "mtop.taobao.search.highway.upload": {
+  "replay": "no",
+  "why": "FAIL_SYS_SERVICE_TIMEOUT"
+ },
+ "mtop.xianyu.item.track.query": {
+  "replay": "yes",
+  "why": "OK 1901B"
+ }
+}

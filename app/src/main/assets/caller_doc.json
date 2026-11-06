@@ -1,0 +1,45 @@
+{
+  "_comment": "调用链里出现的类名 → 中文说明。导出报告时用它把英文类名翻成中文，前端显示为「中文名（英文类名）」。",
+  "classes": {
+    "MtopExtSDKHandler": "mtop 扩展 SDK 处理器",
+    "BaseHandler": "远端对象基础处理器",
+    "EasyMtopSDK": "轻量 mtop 调用器",
+    "MtopSend": "请求发送器",
+    "MtopLauncher": "mtop 启动器",
+    "Sync": "数据同步器",
+    "RulesManager": "规则管理器",
+    "FBDocument": "Flybird H5 文档",
+    "HighwayMtopUtil": "埋点上报工具",
+    "MRTConfigRequest": "端侧模型配置请求",
+    "MNNCV": "端侧视觉模型（MNN-CV）",
+    "MRTTaobaoAdapter": "端侧模型淘系适配器",
+    "MRTConfiguration": "端侧模型配置中心",
+    "OrangeConfigListenerStub": "橙心配置变更监听",
+    "OrangeConfigImpl": "橙心配置实现",
+    "DataSender": "DAI 数据上报器",
+    "MtopBuilder": "mtop 请求构建器",
+    "MtopBusiness": "mtop 业务请求入口",
+    "MtopRequest": "mtop 请求对象",
+    "MtopResponse": "mtop 响应对象",
+    "HookBridge": "Vector 方法桥",
+    "Vector_": "Vector 框架入口",
+    "MtopHooks": "U闲 抓包钩子",
+    "CallerTrace": "U闲 调用栈分析",
+    "TrafficStore": "U闲 抓包存储",
+    "TrafficExport": "U闲 报告导出"
+  },
+  "layers": {
+    "kt": "Kotlin",
+    "java": "Java",
+    "h5": "H5",
+    "weex": "Weex",
+    "fl": "Flutter",
+    "sdk": "SDK",
+    "native": "Native"
+  },
+  "replay": {
+    "yes": "可重放",
+    "no": "不可重放",
+    "unk": "待验证"
+  }
+}

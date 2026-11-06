@@ -1,0 +1,1015 @@
+{
+ "apiDoc": {
+  "mtop.taobao.idlehome.home.nextfresh": {
+   "intent": "首页推荐信息流",
+   "cat": "信息流",
+   "layer": "kt",
+   "note": "首页主信息流。sections 是卡片数组，每张卡片的 data 里含商品标题、价格、卖家、省份。也是本项目过滤推广的唯一挂点（宿主直接读这个 JSONObject）。",
+   "respFields": {
+    "sections": "卡片数组，每项 data 是一张卡",
+    "feedsCount": "本次返回的卡片数",
+    "homeTopList": "金刚位（顶部 20 个圆形入口）",
+    "nextPage": "下一页游标"
+   }
+  },
+  "mtop.taobao.idlehome.home.circle.list": {
+   "intent": "首页顶部 tab 列表",
+   "cat": "信息流",
+   "layer": "kt",
+   "note": "headList 是顶部 4 个大 tab（首页/集市/圈子/回收），circleList 是横向滚动的 27 个圈子分类。",
+   "respFields": {
+    "headList": "顶部主 tab",
+    "circleList": "圈子分类列表",
+    "selectedCircleId": "当前选中的圈子 id"
+   }
+  },
+  "mtop.taobao.idlemessage.session.sync": {
+   "intent": "消息会话列表同步",
+   "cat": "消息",
+   "layer": "kt",
+   "note": "消息页的主接口。sessions 每项的 session.sessionType 决定会话类型：1=真人私聊，3/10/23/24/25/62/63=各类官方号。",
+   "respFields": {
+    "sessions": "会话数组",
+    "hasMore": "是否还有更多"
+   }
+  },
+  "mtop.idle.user.page.my.adapter": {
+   "intent": "「我的」页顶部结构",
+   "cat": "我的",
+   "layer": "kt",
+   "note": "决定「我的」页头部卡片内容（头像/鱼力值/设置/客服）。U闲 的入口就是注入在这里。",
+   "respFields": {
+    "base": "头部卡片数据",
+    "ability": "该页能力开关"
+   }
+  },
+  "mtop.taobao.idlecommerce.splash.ads": {
+   "intent": "开屏广告（同步）",
+   "cat": "广告",
+   "layer": "java",
+   "note": "返回 ads/splashAdList。被 U闲 清空后 SDK 拿不到素材就不展示。",
+   "respFields": {
+    "ads": "广告列表",
+    "splashAdList": "开屏广告列表"
+   }
+  },
+  "mtop.taobao.idlecommerce.splash.async.ads": {
+   "intent": "开屏广告（异步预拉）",
+   "cat": "广告",
+   "layer": "h5",
+   "note": "和同步接口一样被清空；异步那条走 H5 容器。"
+  },
+  "mtop.taobao.idlemtopsearch.search": {
+   "intent": "搜索结果（主接口）",
+   "cat": "搜索",
+   "layer": "fl",
+   "note": "搜索页由 Flutter 渲染（libapp.so 54MB），Java 层拿不到结果，所以这个接口的响应改了也不会反映到页面。从外部重发会被服务端拒（FAIL_BIZ_COMMON_PARAM_ILLEGAL）—— 依赖宿主私有上下文。"
+  },
+  "mtop.taobao.idlemtopsearch.search.discover": {
+   "intent": "分类推荐流（搜索发现页）",
+   "cat": "搜索",
+   "layer": "fl",
+   "note": "参数极简，外部可调通，返回 61KB。"
+  },
+  "mtop.taobao.idlemtopsearch.search.suggest": {
+   "intent": "搜索联想词",
+   "cat": "搜索",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.item.resell.channel": {
+   "intent": "回收频道商品列表",
+   "cat": "回收",
+   "layer": "h5",
+   "note": "「卖闲置/回收」页的数据源，走 H5 容器（referer 是 h5.m.goofish.com）。"
+  },
+  "mtop.taobao.idle.user.strategy.list": {
+   "intent": "首页运营位策略",
+   "cat": "运营",
+   "layer": "kt",
+   "note": "决定首页的闲鱼币入口氛围（BIZ_IDLE_COIN_ENTRANCE_2）和底部发布球（BIZ_PUBLISH_BALL）。"
+  },
+  "mtop.taobao.idle.publish.button.list": {
+   "intent": "发布页按钮配置",
+   "cat": "发布",
+   "layer": "h5",
+   "note": "publishButtonList 是发布页顶部那排入口（旧书回收等 11 个）。"
+  },
+  "mtop.taobao.idle.rule.config": {
+   "intent": "客户端过滤规则下发",
+   "cat": "配置",
+   "layer": "java",
+   "note": "服务端下发的字段裁剪规则（filterMtopInfo），告诉客户端哪些字段不用解析。"
+  },
+  "mtop.idle.delivery.data.query": {
+   "intent": "闲鱼币权益列表",
+   "cat": "闲鱼币",
+   "layer": "h5",
+   "note": "data 是 38 条可兑换权益（红包/优惠券），含价格与库存。"
+  },
+  "mtop.taobao.idle.treasure.layout.info": {
+   "intent": "闲鱼币商城布局",
+   "cat": "闲鱼币",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.treasure.hunt.map.init": {
+   "intent": "闲鱼币寻宝地图",
+   "cat": "闲鱼币",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.homehint.list": {
+   "intent": "首页红点提示",
+   "cat": "信息流",
+   "layer": "kt",
+   "note": "决定首页哪些 tab 挂红点（followHints/idleCoinHints/...）。"
+  },
+  "mtop.taobao.idle.home.config": {
+   "intent": "首页功能灰度",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "拍立淘（picSearchGray）、海鲜市场（seafoodGray）等功能的灰度开关。"
+  },
+  "mtop.taobao.idle.ab.config.get": {
+   "intent": "AB 实验分桶",
+   "cat": "配置",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.bootstrap.config.get": {
+   "intent": "启动引导配置",
+   "cat": "配置",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.user.check": {
+   "intent": "用户状态校验",
+   "cat": "账号",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.user.action.strategy": {
+   "intent": "用户行为策略",
+   "cat": "配置",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.user.strategy.report": {
+   "intent": "用户策略埋点上报",
+   "cat": "埋点",
+   "layer": "h5",
+   "note": "上报设备/版本/位置等画像信息，4KB 请求体。"
+  },
+  "mtop.taobao.idlehome.user.operator.tracker": {
+   "intent": "首页运营埋点配置",
+   "cat": "埋点",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.ut.log.report": {
+   "intent": "UT 埋点上报",
+   "cat": "埋点",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.ut.log.config.get": {
+   "intent": "UT 埋点采样配置",
+   "cat": "埋点",
+   "layer": "kt"
+  },
+  "mtop.taobao.search.highway.upload": {
+   "intent": "搜索行为埋点上传",
+   "cat": "埋点",
+   "layer": "kt",
+   "note": "一次启动打了 7 次，是最高频的埋点。"
+  },
+  "mtop.taobao.idle.device.report": {
+   "intent": "设备信息上报",
+   "cat": "埋点",
+   "layer": "h5",
+   "note": "含 androidId / userAgent / aliOaid 等设备指纹。"
+  },
+  "mtop.client.mudp.update": {
+   "intent": "热更新包检查",
+   "cat": "更新",
+   "layer": "kt"
+  },
+  "mtop.alibaba.emas.publish.update.resource.get": {
+   "intent": "资源包更新检查",
+   "cat": "更新",
+   "layer": "kt"
+  },
+  "mtop.taobao.edgecomputer.query": {
+   "intent": "端计算模型配置",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "下发端侧计算（IBFS 等）的模型与埋点规则。"
+  },
+  "mtop.taobao.idle.message.fci.js.fetch": {
+   "intent": "消息页 JS 脚本下发",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "urlMap 是 FCI 小程序脚本的 CDN 地址与 md5。"
+  },
+  "mtop.taobao.idlemessage.face.emoji.load": {
+   "intent": "表情包列表",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlemessage.face.categories.load": {
+   "intent": "表情包分类",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlemessage.profile.notice.list": {
+   "intent": "消息页公告",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlemessage.super.top.session.query": {
+   "intent": "置顶会话查询",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlemessage.receive.classify.query": {
+   "intent": "消息分类查询",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlemessage.user.query.top.resource": {
+   "intent": "消息页顶部资源位",
+   "cat": "消息",
+   "layer": "h5"
+  },
+  "mtop.idle.interact.notice.show": {
+   "intent": "互动弹窗（我的页）",
+   "cat": "运营",
+   "layer": "h5"
+  },
+  "mtop.idle.idleadv.scene.restore": {
+   "intent": "广告场景恢复",
+   "cat": "广告",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.gamecenter.degrade.list": {
+   "intent": "游戏中心降级名单",
+   "cat": "配置",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.fci.coupon.tags": {
+   "intent": "用户品类偏好标签",
+   "cat": "画像",
+   "layer": "kt",
+   "note": "firstPrefer 是用户品类偏好权重，purchaseRecord 是购买记录。"
+  },
+  "mtop.taobao.idle.fci.auge.crowd.check": {
+   "intent": "人群圈选校验（开屏问卷）",
+   "cat": "画像",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.fci.home.survey.population.check": {
+   "intent": "首页问卷人群校验",
+   "cat": "画像",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.fci.recommend.reason.population.check": {
+   "intent": "推荐理由人群校验",
+   "cat": "画像",
+   "layer": "kt",
+   "note": "userProfile 里直接给出用户的决策因子列表。"
+  },
+  "mtop.taobao.idle.fci.model.download": {
+   "intent": "端侧模型下载",
+   "cat": "配置",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.ai.apps.buyer.agent.gray": {
+   "intent": "AI 买家助手灰度",
+   "cat": "配置",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.ai.apps.abtest.buyer.assistant.hit.check": {
+   "intent": "AI 助手实验命中",
+   "cat": "配置",
+   "layer": "kt"
+  },
+  "mtop.taobao.heracles.inno.interactive.voice.token.query": {
+   "intent": "语音交互 token",
+   "cat": "配置",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.item.resell.channel.ab.config": {
+   "intent": "回收频道实验配置",
+   "cat": "回收",
+   "layer": "h5"
+  },
+  "mtop.taobao.idle.item.resell.channel.tablist": {
+   "intent": "回收频道 tab 列表",
+   "cat": "回收",
+   "layer": "h5"
+  },
+  "mtop.idle.play.behavior.relation.query": {
+   "intent": "活动参与状态查询",
+   "cat": "闲鱼币",
+   "layer": "h5"
+  },
+  "com.taobao.idle.get.config": {
+   "intent": "客户端通用配置",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "发布/同城/擦亮等功能的开关与提示文案。"
+  },
+  "com.taobao.idle.get.nav.config": {
+   "intent": "Activity 导航映射",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "类名;key;spm 三元组，外部深链跳转靠它解析。"
+  },
+  "com.taobao.idle.host.authorize": {
+   "intent": "H5 容器白名单",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "trustedUrlList / blacklist / schemeBlacklist —— 决定哪些域名能在闲鱼内置浏览器打开。"
+  },
+  "com.taobao.idle.user.init": {
+   "intent": "用户初始化",
+   "cat": "账号",
+   "layer": "kt"
+  },
+  "mtop.common.getTimestamp": {
+   "intent": "服务端时间戳",
+   "cat": "基础",
+   "layer": "kt"
+  },
+  "mtop.taobao.idlemtopsearch.search.shade": {
+   "intent": "搜索页骨架屏配置",
+   "cat": "搜索",
+   "layer": "h5"
+  },
+  "mtop.idle.circle.user.circle.item.card.query": {
+   "intent": "鱼塘圈子卡片查询",
+   "cat": "圈子",
+   "layer": "kt",
+   "note": "鱼塘页里每个圈子卡片的详情数据。"
+  },
+  "mtop.taobao.idlehome.home.tab.list": {
+   "intent": "首页 tab 配置",
+   "cat": "信息流",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.item.detail.query": {
+   "intent": "商品详情主接口",
+   "cat": "商品",
+   "layer": "fl",
+   "note": "详情页由 Flutter 渲染，Java 层拿到的结果不直接驱动页面。"
+  },
+  "mtop.taobao.idlemessage.session.update": {
+   "intent": "会话更新同步",
+   "cat": "消息",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.publish.draft.list": {
+   "intent": "草稿箱列表",
+   "cat": "发布",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.user.profile.get": {
+   "intent": "用户资料查询",
+   "cat": "账号",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.awesome.detail": {
+   "intent": "商品详情（新版）",
+   "cat": "商品",
+   "layer": "fl"
+  },
+  "mtop.taobao.idle.awesome.detail.unit": {
+   "intent": "商品详情分块数据",
+   "cat": "商品",
+   "layer": "fl",
+   "note": "详情页按区块（unit）分批返回，Java 层能拿到但页面由 Flutter 渲染。"
+  },
+  "mtop.taobao.idle.item.wind.recommend.list": {
+   "intent": "商品推荐列表",
+   "cat": "商品",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.item.resell.channel.item.list": {
+   "intent": "回收频道商品明细",
+   "cat": "回收",
+   "layer": "h5"
+  },
+  "mtop.taobao.idlehome.home.recommend": {
+   "intent": "首页推荐（旧版）",
+   "cat": "信息流",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.search.hint": {
+   "intent": "搜索提示词",
+   "cat": "搜索",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.user.setting.get": {
+   "intent": "用户设置查询",
+   "cat": "账号",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.msg.unread.count": {
+   "intent": "未读数统计",
+   "cat": "消息",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.circle.list": {
+   "intent": "鱼塘列表",
+   "cat": "圈子",
+   "layer": "kt"
+  },
+  "mtop.taobao.idle.live.list": {
+   "intent": "直播列表",
+   "cat": "直播",
+   "layer": "kt"
+  },
+  "mtop.taobao.paramservice.request": {
+   "intent": "参数服务请求",
+   "cat": "配置",
+   "layer": "kt",
+   "note": "通用参数服务：客户端把要取的配置项打包发上去，服务端按 key 返回。具体内容看请求体里的 key。"
+  },
+  "mtop.taobao.idle.forest.animal.feed": {
+   "intent": "森林喂养",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "喂养动物消耗能量。feedId 来自 animal.list 的 result[].feedInfo.feedId。canFeedTime=0 表示可喂；响应 record.feedPercent 涨约5%。1.0 版本。",
+   "respFields": {
+    "canFeedTime": "0=可喂，非0疑似冷却",
+    "record": "喂养后动物状态（同 animal.list 结构）"
+   },
+   "reqFields": {
+    "feedId": "要喂养的动物记录 id，来自 animal.list 的 result[].feedInfo.feedId",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.forest.quiz.info": {
+   "intent": "森林绿色答题-取题",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "响应直接带 correctIndex（答案下标），配合 cube.task.trigger(activityId=103786) 完成答题，答完 energy.list 出 lvsekepu-XY 气泡可领 10 能量。1.0 版本。",
+   "respFields": {
+    "questionId": "题目id",
+    "correctIndex": "正确答案下标（服务端直接给）",
+    "options": "选项数组"
+   },
+   "reqFields": {
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.cube.task.trigger": {
+   "intent": "cube 任务触发",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "cube 引擎：触发后 idleTaskStatus=AWARD，再用 joy.community.activity.task.award 领奖。idempotentKey=当前毫秒时间戳。taskInstanceId 来自 oliver.show(activityId)。",
+   "respFields": {
+    "idleTaskStatus": "AWARD=触发成功待领取",
+    "awardInfoDTOMap": "各奖励档状态"
+   },
+   "reqFields": {
+    "activityId": "活动 id（答题=103786，装扮=102178），来自 oliver.show 的入参",
+    "taskInstanceId": "任务实例 id，来自 oliver.show 响应里对应任务的 taskInstanceId",
+    "idempotentKey": "幂等键，取当前毫秒时间戳，每次调用现取",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.joy.community.activity.task.award": {
+   "intent": "joy 活动任务领奖（多日挑战 / 答题）",
+   "cat": "任务",
+   "layer": "kt",
+   "note": "与 oliver 领奖是**两套参数约定**，别混：joy 用 activityId + taskId(数字) + awardIndexList(字符串)，oliver 用 deliveryId(数字) + sceneId。status=2（已领）时再调**不会**返回幂等提示，而是 FAIL_BIZ_ACTIVITY_TASK_CANNOT_AWARD（「领奖失败，请稍后再试~」）—— 必须先在本地按 status 筛。",
+   "reqFields": {
+    "activityId": "活动 id，来自 challenge.info 的 extend.activityId（字符串）",
+    "taskId": "任务实例 id，来自 challenge.info 的 extend.taskInstanceId（数字）",
+    "awardIndexList": "档位序号字符串，如 \"1\"；多档可逗号拼接",
+    "asac": "风控参数，从抓包库取（body 或 header 都可能带）",
+    "fishAdCode": "城市行政编码，环境常量",
+    "gps": "经纬度，环境常量"
+   },
+   "respFields": {
+    "failIndexList": "领取失败的档位序号数组，空数组=全部成功",
+    "idleJoyTaskDTO.awardInfoDTOMap": "已领档位的详情（status=2 表示已领）",
+    "idleJoyTaskDTO.currentProcessNum": "当前已攒次数"
+   }
+  },
+  "mtop.taobao.idle.task.queryolivertasklist": {
+   "intent": "任务中心列表(oliver)",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "sceneId=496 是寻宝地图骰子任务。idleTaskStatus: ACCEPTED未完成→AWARD待领取→COMPLETE已领。deliveryId 领奖时用；materialDTO.actionType=VISIT 的任务需跳 H5 完成。",
+   "respFields": {
+    "taskList[].deliveryId": "领奖参数",
+    "taskList[].idleTaskStatus": "任务状态",
+    "extend.diceTaskCountDown": "骰子倒计时任务"
+   },
+   "reqFields": {
+    "sceneId": "场景 id，496=寻宝地图骰子任务",
+    "brand": "机型品牌，实测 oneplus，判断不严格",
+    "osVersion": "系统版本号字符串，同上",
+    "platform": "固定 Android",
+    "isWidgetInstalled": "是否装了桌面小组件，布尔",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.task.getolivertaskbenefit": {
+   "intent": "oliver 任务领奖",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "AWARD 状态的 oliver 任务用此接口领取，成功后 idleTaskStatus 变 COMPLETE。",
+   "respFields": {
+    "taskDTO.idleTaskStatus": "COMPLETE=已领取"
+   },
+   "reqFields": {
+    "deliveryId": "任务投递 id，来自 queryolivertasklist 的 taskList[].deliveryId",
+    "sceneId": "同列表查询的 sceneId（496）",
+    "asac": "风控参数，从抓包原样取",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.treasure.hunt.map.roll": {
+   "intent": "寻宝地图掷骰子",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "闲鱼币大地图核心。locationBefore 用 game.refresh 的 userInfo.location（防重放）；mapVersion 用 init 的 11；outId=毫秒时间戳；version 固定 3。diceType: FORWARD_STEP 普通 / SURFACE12_DICE 十二面骰（需 diceId=prop.list 的道具id）。",
+   "respFields": {
+    "contentList": "路径上每个奖励格（contentType=coin, rewardNum）",
+    "addPoint": "本次所得积分"
+   },
+   "reqFields": {
+    "diceType": "FORWARD_STEP=普通步进 / SURFACE12_DICE=十二面骰（需同时给 diceId）",
+    "locationBefore": "掷之前的格位，必须等于 game.refresh 的 userInfo.location（防重放）",
+    "mapVersion": "地图版本，来自 map.init 的 mapResource[].mapVersion（当前 \"11\"）",
+    "outId": "幂等键，当前毫秒时间戳",
+    "version": "协议版本，固定 3",
+    "diceId": "（仅十二面骰）道具实例 id，来自 play.prop.list 的 propInfos[].id",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.treasure.hunt.map.game.refresh": {
+   "intent": "寻宝地图状态刷新",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "拿 userInfo：location 当前格位（roll 的 locationBefore 来源）、diceNum 剩余骰子（0 则先做任务）、coinNum 闲鱼币余额。",
+   "respFields": {
+    "refreshGameData.userInfo": "location/diceNum/coinNum/mapCode/remainStep"
+   },
+   "reqFields": {
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.idle.play.signin.cash.main": {
+   "intent": "现金签到主状态",
+   "cat": "签到",
+   "layer": "h5",
+   "note": "金币拆红包。currentBonus=true 有可拆红包；timeTask.time 倒计时；signCashNum/threshold 现金进度。",
+   "respFields": {
+    "currentBonus": "有可拆红包",
+    "signCashNum": "已攒现金",
+    "signCashThreshold": "提现门槛",
+    "timeTask.time": "下一个红包倒计时秒"
+   },
+   "reqFields": {
+    "asac": "风控参数，从抓包原样取",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.idle.play.signin.cash.open": {
+   "intent": "现金红包拆红包",
+   "cat": "活动",
+   "layer": "kt",
+   "note": "必须带 asac（缺了报 FAIL_SYS_BIZPARAM_MISSED「服务竟然出错」）。asac 在本接口的 **body 和 header 里都有**，是抓包库里最稳的取样点 —— 现金/任务/挑战三处都靠它。",
+   "reqFields": {
+    "asac": "风控令牌，本接口 body 里带，可作为取样源",
+    "fishAdCode": "城市行政编码，环境常量",
+    "gps": "经纬度，环境常量"
+   },
+   "respFields": {
+    "amount": "本次拆到的金额（分）"
+   }
+  },
+  "mtop.taobao.pentaprism.scene.trigger": {
+   "intent": "五棱镜任务触发",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "场景任务触发。fromToken/implId 来自 pentaprism.scene.query；implId 格式 other_<period>_<idx>_<deliveryId>_<n>。",
+   "respFields": {
+    "model.progress.status": "COMPLETE=完成",
+    "model.rewards": "奖励明细"
+   },
+   "reqFields": {
+    "activityId": "活动 id（实测 100104）",
+    "deliveryId": "任务投递 id，来自 pentaprism.scene.query 响应",
+    "fromToken": "场景令牌，来自 pentaprism.scene.query 响应",
+    "implId": "实现 id，格式 other_<period>_<idx>_<deliveryId>_<n>；trigger 用尾号 _0",
+    "awardIndex": "奖励档位，固定 1",
+    "samplingRate": "采样率，实测 0",
+    "sceneId": "场景 id（实测 7066）",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.pentaprism.scene.award": {
+   "intent": "五棱镜任务领奖",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "trigger 成功后调用，同参数。rewards[].errorCode=SENT 表示发放成功。",
+   "respFields": {
+    "rewards[].errorCode": "SENT=已发放"
+   }
+  },
+  "mtop.taobao.idle.circle.point.sign.in": {
+   "intent": "圈子签到",
+   "cat": "签到",
+   "layer": "h5",
+   "note": "circleId 从 circle.main.tab / circle.main.page 拿。+5 成长值，幂等。",
+   "respFields": {
+    "signStatus": "SIGNED=已签",
+    "awardedGrowth": "本次成长值",
+    "totalGrowth": "总成长值"
+   },
+   "reqFields": {
+    "circleId": "圈子 id，来自 circle.main.tab / circle.main.page",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.circle.benefit.exchange": {
+   "intent": "圈子权益兑换",
+   "cat": "任务",
+   "layer": "h5",
+   "note": "用成长值兑换权益（头像挂件等）。benefitId 从 circle.benefit.detail 拿。",
+   "respFields": {
+    "success": "true=兑换成功",
+    "exchangedFlowNo": "兑换流水号"
+   },
+   "reqFields": {
+    "benefitId": "要兑换的权益 id，来自 circle.benefit.detail",
+    "circleId": "圈子 id，同上",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.play.prop.list": {
+   "intent": "道具背包",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "bizCode=coinMap 查寻宝地图道具（如十二面骰 SURFACE12_DICE），propInfos[].id 是使用时的道具实例id。",
+   "respFields": {
+    "propInfos[].id": "道具实例id（prop.use 用）",
+    "propInfos[].configId": "道具配置id"
+   },
+   "reqFields": {
+    "bizCode": "业务编码，coinMap=寻宝地图道具背包",
+    "pageNumber": "页码，固定 1",
+    "pageSize": "每页数量，50 够用",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.taobao.idle.play.prop.use": {
+   "intent": "使用道具",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "bizCode=cycleCoinMapV2（寻宝场景）。响应 attributes.benefitResult 直接发权益。",
+   "respFields": {
+    "attributes.benefitResult": "发放的权益明细"
+   },
+   "reqFields": {
+    "bizCode": "使用场景，cycleCoinMapV2=寻宝地图（注意与 list 的 coinMap 不同）",
+    "configId": "道具配置 id，来自 prop.list 的 propInfos[].configId",
+    "id": "道具实例 id，来自 prop.list 的 propInfos[].id",
+    "outId": "幂等键，当前毫秒时间戳",
+    "asac": "风控参数，从抓包原样取",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.idle.interact.cycle.challenge.info": {
+   "intent": "环游挑战进度",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "寻宝地图的累计挑战：currentCycle 当前圈数，tierList 奖励阶梯（REACHED/CHALLENGING）。",
+   "respFields": {
+    "tierList": "奖励阶梯",
+    "currentCycle": "当前圈数"
+   }
+  },
+  "mtop.taobao.idle.forest.animal.exit": {
+   "intent": "森林动物放归",
+   "cat": "游戏",
+   "layer": "h5",
+   "note": "operateId 疑似 格位#行#列（p#22#5），规则待确认。",
+   "respFields": {
+    "isSuccess": "操作结果"
+   },
+   "reqFields": {
+    "operateId": "格位编号，形如 p#22#5（规则待确认）",
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城），建议带",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   }
+  },
+  "mtop.idle.multi.day.challenge.info": {
+   "intent": "多日任务挑战进度",
+   "cat": "任务",
+   "layer": "kt",
+   "note": "activityId=104293 的「做任务攒次数」活动。subProgressInfos[].status: 0=未达成 1=可领 2=已领；awardThreshold 是档位（3/6/10 次各 100/300/500 闲鱼币）。领奖走 joy.community.activity.task.award。",
+   "reqFields": {
+    "fishAdCode": "城市行政编码，环境常量（330102=杭州上城）",
+    "gps": "经纬度 \"lat,lng\"，环境常量，不校验精度"
+   },
+   "respFields": {
+    "idleTaskDTO.extend.activityId": "活动 id，领奖时当 activityId 传（实测 104293）",
+    "idleTaskDTO.extend.taskInstanceId": "任务实例 id，领奖时当 taskId 传",
+    "idleTaskDTO.idleJoyTaskProgressDTO.subProgressInfos[].index": "档位序号，领奖时当 awardIndexList 传",
+    "idleTaskDTO.idleJoyTaskProgressDTO.subProgressInfos[].status": "0=未达成 1=可领 2=已领",
+    "idleTaskDTO.idleJoyTaskProgressDTO.subProgressInfos[].awardThreshold": "达成需要的次数（3/6/10）"
+   }
+  },
+  "mtop.idle.challenge.idleCoinSign.info": {
+   "intent": "闲鱼币签到状态（轻量）",
+   "cat": "任务",
+   "layer": "kt",
+   "note": "只返回 {\"failedFlag\":false}，信息量极少；签到状态仍以 play.sign.in.home 的 signInAwarded 为准。列表页会顺手调一次。",
+   "reqFields": {
+    "fishAdCode": "城市行政编码，环境常量",
+    "gps": "经纬度，环境常量"
+   },
+   "respFields": {
+    "failedFlag": "查询是否失败；false=正常"
+   }
+  }
+ },
+ "fieldDoc": {
+  "sections": "首页卡片数组",
+  "feedsCount": "卡片数量",
+  "homeTopList": "金刚位区块",
+  "widgets": "金刚位行",
+  "widgetDO": "金刚位数据对象",
+  "channelDOList": "金刚位入口列表",
+  "arg1": "埋点动作名",
+  "idleAdsTaskId": "运营埋点 ID（不是广告标记）",
+  "bizType": "业务类型（item/resell/house/bid）",
+  "cardTypeValue": "卡片类型",
+  "targetUrl": "跳转地址",
+  "targetPage": "目标页（detail = 商品详情）",
+  "itemId": "商品 ID",
+  "titleSpan": "标题富文本",
+  "richTitle": "标题富文本数组",
+  "priceInfo": "价格富文本",
+  "priceUnitInfos": "价格片段（¥ / 数值分开给）",
+  "soldPrice": "成交价（纯数值）",
+  "detailParams": "详情页预置参数",
+  "recProvince": "推荐来源省份",
+  "userNick": "卖家昵称",
+  "sellerId": "卖家 ID",
+  "userId": "用户 ID",
+  "favorCount": "想要人数",
+  "hotPoint": "热度提示文案",
+  "fishTags": "闲鱼标签（成色/规格）",
+  "tagList": "标签数组",
+  "matchType": "召回方式（pi2i_recall 等）",
+  "traceId": "链路追踪 ID",
+  "pvid": "页面浏览 ID",
+  "spm": "埋点位置编码",
+  "serverTime": "服务端时间",
+  "nextPage": "下一页游标",
+  "hasMore": "是否还有更多",
+  "sessions": "会话数组",
+  "sessionType": "会话类型（1=真人私聊）",
+  "sessionId": "会话 ID",
+  "summary": "摘要",
+  "unread": "未读数",
+  "sortIndex": "排序索引",
+  "itemInfo": "商品信息",
+  "mainPic": "商品主图",
+  "attributeMap": "扩展属性",
+  "apiName": "接口名",
+  "apiVersioin": "接口版本（服务端字段就是这么拼的）",
+  "originJson": "是否要求原始 JSON",
+  "needDecryptKeys": "需要解密的字段",
+  "serverDecryptKeys": "服务端解密字段",
+  "ret": "返回码（SUCCESS 才算成功）",
+  "v": "协议版本",
+  "data": "业务数据",
+  "result": "结果",
+  "success": "是否成功",
+  "nav": "Activity 导航映射表",
+  "trustedUrlList": "可信域名白名单",
+  "blacklist": "黑名单域名",
+  "schemeBlacklist": "scheme 黑名单",
+  "isvUrlList": "第三方 appKey 列表",
+  "filterMtopInfo": "服务端下发的字段裁剪规则",
+  "ruleConfig": "规则配置",
+  "benefitDetailList": "权益明细列表",
+  "couponTotal": "券总量",
+  "benefitType": "权益类型",
+  "worthAmountStr": "抵扣金额",
+  "priceNewStr": "兑换价",
+  "firstPrefer": "品类偏好权重",
+  "purchaseRecord": "购买记录",
+  "userProfile": "用户决策因子画像",
+  "strategies": "策略列表",
+  "renderMap": "渲染映射",
+  "chain": "调用链（内 → 外）",
+  "caller": "调用方",
+  "layer": "调用层（Kotlin / Java / H5 / Flutter / SDK）",
+  "replay": "能否从外部重放",
+  "reqHeaders": "请求头",
+  "hits": "同一内容出现次数",
+  "respLen": "响应字节数",
+  "ver": "接口版本",
+  "needSession": "是否需要登录态",
+  "needEcode": "是否需要 ecode",
+  "restoreStage": "广告场景恢复阶段（appLaunch = 启动时）",
+  "stageMatch": "场景是否命中",
+  "trackParams": "埋点参数",
+  "commonBucketId": "通用实验分桶 ID",
+  "ex1BucketId": "实验分桶 1",
+  "ex2BucketId": "实验分桶 2",
+  "degradeUnionReg": "是否降级联合注册",
+  "enableUnionReg": "是否启用联合注册",
+  "funHitABList": "命中的功能实验列表",
+  "myTabNewAlert": "「我的」页是否有新提示",
+  "picSearchGray": "拍立淘灰度开关",
+  "seafoodGray": "海鲜市场灰度开关",
+  "isHit": "是否命中该灰度",
+  "seaVersion": "海鲜市场版本",
+  "bucketId": "实验分桶 ID",
+  "disableChat": "是否禁用聊天",
+  "disableSameCity": "是否禁用同城",
+  "itemCycle": "商品在线周期说明文案",
+  "publishDraftDefaultCondition": "发帖默认可见范围",
+  "alipay": "是否启用支付宝",
+  "ability": "页面能力开关",
+  "base": "头部卡片数据",
+  "container": "容器数据",
+  "utArgs": "埋点参数",
+  "avatar": "头像",
+  "setting": "设置入口",
+  "cs": "鱼力值",
+  "service": "帮助与客服",
+  "snsNick": "闲鱼昵称",
+  "score": "鱼力值分数",
+  "url": "跳转地址",
+  "icon": "图标地址",
+  "title": "标题",
+  "guidePublishType": "发布引导类型",
+  "ignoreImageEditor": "是否忽略图片编辑器",
+  "publishButtonList": "发布页入口按钮列表",
+  "publishDXTemplateList": "发布页动态模板列表",
+  "publishType": "发布类型",
+  "stBucket": "实验分桶标记",
+  "uniqNick": "唯一昵称",
+  "badgeImageUrl": "角标图片地址",
+  "activeTime": "生效时间",
+  "position": "位置标识",
+  "index": "序号",
+  "trackEvent": "埋点事件名",
+  "tagName": "标签名",
+  "tagId": "标签 ID",
+  "launchUrl": "启动地址",
+  "thirdPartyList": "第三方列表",
+  "whitelist": "白名单",
+  "listPreFilter": "列表预过滤配置",
+  "resDataFilter": "要裁掉的字段",
+  "hasUpdate": "是否有更新",
+  "updateInfo": "更新信息",
+  "patchVersion": "补丁版本",
+  "dexpatchVersion": "dex 补丁版本",
+  "updateTypes": "更新类型",
+  "diagnoseSceneConfigModelList": "诊断场景配置",
+  "models": "模型列表",
+  "inTargetCrowd": "是否在目标人群中",
+  "bucket": "人群分桶",
+  "cateName": "类目名",
+  "cateId": "类目 ID",
+  "scene": "场景标识",
+  "socModel": "芯片型号",
+  "secondPrefer": "次级品类偏好",
+  "tags": "标签列表",
+  "channelCatName": "频道类目名",
+  "times": "次数",
+  "mapCode": "地图编码",
+  "shoppingMallVO": "商城数据",
+  "categoryId": "类目 ID",
+  "description": "说明文案",
+  "exchangedNumStr": "已兑换数量",
+  "totalBenefitNum": "权益总数量",
+  "innerCost": "内部成本",
+  "benefitUrl": "权益跳转地址",
+  "startTimeStamp": "开始时间戳",
+  "endTimeStamp": "结束时间戳",
+  "mainImgUrl": "主图地址",
+  "extra": "额外信息",
+  "nextPageFlag": "是否还有下一页",
+  "mapResource": "地图资源",
+  "dailyReward": "每日奖励",
+  "buffTags": "加成标签",
+  "abResult": "实验分桶结果",
+  "displayTreasure": "是否展示寻宝",
+  "displayFishCircle": "是否展示鱼塘",
+  "todayNum": "今日数量",
+  "tomorrowNum": "明日数量",
+  "dailyStepNum": "每日步数",
+  "userInfo": "用户信息",
+  "mapSequence": "地图序列",
+  "token": "访问令牌",
+  "expireTime": "过期时间",
+  "urlMap": "脚本地址映射",
+  "uploadErrorLog": "是否上传错误日志",
+  "enableByteCode": "是否启用字节码",
+  "md5": "文件摘要",
+  "fci": "前端计算引擎（FCI）",
+  "resultList": "结果列表",
+  "sessionList": "会话列表",
+  "followHints": "关注红点",
+  "idleCoinHints": "闲鱼币红点",
+  "idleLiveHints": "直播红点",
+  "idleSeafoodHints": "海鲜市场红点",
+  "iconUrl": "图标地址",
+  "iconWidth": "图标宽度",
+  "iconHeight": "图标高度",
+  "args": "埋点参数",
+  "trackName": "埋点名称",
+  "page": "页面标识",
+  "strategyList": "策略列表",
+  "paramMap": "参数映射",
+  "login": "是否已登录",
+  "acceptedMyBank": "是否开通网商银行",
+  "playboy": "特殊标记",
+  "items": "条目列表",
+  "itemList": "商品列表",
+  "currentSubSceneList": "当前子场景列表",
+  "sceneList": "场景列表",
+  "totalAmt": "总金额",
+  "totalNumber": "总数量",
+  "bizAuthText": "认证引导文案",
+  "bizAuthStatus": "认证状态",
+  "bizAuthImageUrl": "认证引导图",
+  "dislikeBtnShow": "是否展示不喜欢按钮",
+  "hasNext": "是否还有下一页",
+  "resellSearchVersion": "回收搜索版本",
+  "tabList": "tab 列表",
+  "tabName": "tab 名称",
+  "sceneId": "场景 ID",
+  "itemCount": "商品数",
+  "sceneName": "场景名称",
+  "callFrom": "调用来源",
+  "pageNumber": "页码",
+  "pageSize": "每页数量",
+  "mainSceneId": "主场景 ID",
+  "subSceneId": "子场景 ID",
+  "parameterStr": "参数串",
+  "version": "版本",
+  "channel": "渠道",
+  "dataSourceId": "数据源 ID",
+  "pageResourceId": "页面资源 ID",
+  "extraInfo": "额外信息",
+  "currentCity": "当前城市",
+  "weather": "天气",
+  "timestamp": "时间戳",
+  "t": "服务端时间（毫秒）",
+  "code": "返回码",
+  "msg": "返回信息",
+  "message": "消息",
+  "error": "错误",
+  "type": "类型",
+  "status": "状态",
+  "value": "值",
+  "list": "列表",
+  "count": "数量",
+  "name": "名称",
+  "desc": "描述",
+  "id": "标识",
+  "uid": "用户标识",
+  "nick": "昵称",
+  "price": "价格",
+  "originalPrice": "原价",
+  "quantity": "数量",
+  "stock": "库存",
+  "imageUrl": "图片地址",
+  "imgUrl": "图片地址",
+  "link": "链接",
+  "target": "跳转目标",
+  "pageName": "页面名",
+  "unreadCount": "未读数",
+  "lastMessage": "最后一条消息",
+  "userAvatar": "用户头像",
+  "memberFlags": "成员标记",
+  "ownerInfo": "卖家信息",
+  "fishNick": "闲鱼昵称",
+  "logo": "头像地址",
+  "hasFishNick": "是否有闲鱼昵称",
+  "redReminder": "红点提醒",
+  "itemPicture": "商品图片",
+  "jumpUrl": "跳转地址",
+  "prefix": "前缀",
+  "paramservice": "参数服务"
+ }
+}
