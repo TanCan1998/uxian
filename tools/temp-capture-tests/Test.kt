@@ -1,4 +1,4 @@
-package com.xiandehuang.u
+package io.github.tancan1998.uxian
 
 class Ctx(@JvmField val mtopRequest: Req = Req(), @JvmField var mtopResponse: Resp? = null,
     @JvmField val networkRequest: Net? = Net(), @JvmField val seqNo: String = "seq")

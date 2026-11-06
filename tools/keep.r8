@@ -1,5 +1,5 @@
 # ---- 自有类：模块被框架反射加载、provider 被系统实例化，R8 无从得知入口 ----
--keep class com.xiandehuang.u.** { *; }
+-keep class io.github.tancan1998.uxian.** { *; }
 
 # ---- kotlin stdlib：必须整体保留 ----
 # 踩过的坑：R8 的 shrinker 会把 kotlin.jvm.internal.ArrayIterator.hasNext()

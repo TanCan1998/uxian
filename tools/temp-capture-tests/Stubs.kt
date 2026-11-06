@@ -1,4 +1,4 @@
-package com.xiandehuang.u
+package io.github.tancan1998.uxian
 
 object Reflect {
     fun field(target: Any, name: String): Any? = target.javaClass.getDeclaredField(name).apply { isAccessible = true }.get(target)

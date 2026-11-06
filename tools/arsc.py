@@ -164,7 +164,7 @@ def package_chunk(package_name, arrays, styles):
     return chunk(RES_TABLE_PACKAGE_TYPE, header_size, body)
 
 
-def build(package_name="com.xiandehuang.u", array_name="xposed_scope",
+def build(package_name="io.github.tancan1998.uxian", array_name="xposed_scope",
           values=("com.taobao.idlefish",)):
     global_pool = string_pool(list(values) + ["res/drawable-nodpi/ic_launcher.png"])
     # 中转页主题：Splash 底色与页面一致、图标透明、时长 0，做到冷启动无缝

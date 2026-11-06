@@ -6,7 +6,7 @@
     assets 表根本不存在，AssetManager 读不到任何文件。
     所以模板/脚本/词典一律在编译期转成 Kotlin 字符串常量。
 
-产物: app/src/main/kotlin/com/xiandehuang/u/TrafficAssets.kt
+产物: app/src/main/kotlin/io/github/tancan1998/uxian/TrafficAssets.kt
 
 用法: python3 tools/embed_assets.py
 """
@@ -17,7 +17,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 ASSETS = os.path.join(ROOT, "app", "src", "main", "assets")
-OUT = os.path.join(ROOT, "app", "src", "main", "kotlin", "com", "xiandehuang", "u",
+OUT = os.path.join(ROOT, "app", "src", "main", "kotlin", "io", "github", "tancan1998", "uxian",
                    "TrafficAssets.kt")
 
 
@@ -48,7 +48,7 @@ def main():
     caller = json.dumps(json.loads(caller), ensure_ascii=False, separators=(",", ":"))
 
     body = []
-    body.append("package com.xiandehuang.u")
+    body.append("package io.github.tancan1998.uxian")
     body.append("")
     body.append("/**")
     body.append(" * 前端资源常量。**由 tools/embed_assets.py 自动生成，不要手改**。")

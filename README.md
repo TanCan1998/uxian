@@ -16,7 +16,7 @@
 
 ## 安装与使用
 
-下载 [Releases](https://github.com/TanCan1998/uxian/releases) 中的 APK，在兼容 libxposed API 102 的框架中启用，并将作用域设为对应宿主，然后重启宿主。包名为 `com.xiandehuang.u`。仅发布现代 API 102 构建；U 闲最低 Android 8，U 音最低 Android 9。
+下载 [Releases](https://github.com/TanCan1998/uxian/releases) 中的 APK，在兼容 libxposed API 102 的框架中启用，并将作用域设为对应宿主，然后重启宿主。包名为 `io.github.tancan1998.uxian`。仅发布现代 API 102 构建；U 闲最低 Android 8，U 音最低 Android 9。
 
 U 闲设置通过闲鱼中的模块入口进入；功能按需启用。
 
@@ -49,3 +49,10 @@ sh tools/build.sh new
 特别感谢 [芝麻粒 M / aw1y2z/Sesame-M](https://github.com/aw1y2z/Sesame-M)，其 RPC 通道、任务过滤、失败黑名单和调度思路为本项目提供了重要参考，相关代码注释保留来源。参考源码基线为 `569fac60031e1642acbcd8bece62de56e1ae91b5`。同时感谢其上游 [Dragon813/Sesame-GR](https://github.com/Dragon813/Sesame-GR)、[SenOffical/Sesame-TK](https://github.com/SenOffical/Sesame-TK)、[constanline/XQuickEnergy](https://github.com/constanline/XQuickEnergy)、[pansong291/XQuickEnergy](https://github.com/pansong291/XQuickEnergy)，以及 TKaxv-7S、LazyImmortal、Fansirsqi 等芝麻粒生态维护者。
 
 本项目不是上述项目的官方版本，也未获得其背书。
+
+
+## 官方收录包名迁移（2026.11.06.1）
+
+官方机器人拒绝旧包名 `com.xiandehuang.u` 的域名验证。本发行版改为 `io.github.tancan1998.uxian`，源码命名空间、模块入口、资源包名、Provider authority、重启 action 和调用方检查均同步迁移。旧版 Release 仅保留历史，不应与新版同时启用在同一宿主。
+
+新旧包名不同，无法原地覆盖。迁移时请先停用旧模块，再安装并启用新版、设置宿主作用域后重启宿主；不要同时启用两份模块。模块发行签名继续使用原项目的持久签名。当前已装模块未在本次发布中替换。宿主私有配置键维持原样，但新包名发行版尚未完成真机回归，不能把旧安装版的实测结论视为新版验收。

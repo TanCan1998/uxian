@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.xiandehuang.u"
+    namespace = "io.github.tancan1998.uxian"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.xiandehuang.u"
+        applicationId = "io.github.tancan1998.uxian"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

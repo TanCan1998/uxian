@@ -15,11 +15,11 @@ OUT=build/$MODE
 if [ "$MODE" = "new" ]; then
   XAPI="$DL/lxaar/classes.jar:$DL/lxsvc/classes.jar"
   MINVER=102
-  ENTRY="com.xiandehuang.u.NewEntry"
+  ENTRY="io.github.tancan1998.uxian.NewEntry"
 else
   XAPI="$DL/api82.jar"
   MINVER=93
-  ENTRY="com.xiandehuang.u.HookEntry"
+  ENTRY="io.github.tancan1998.uxian.HookEntry"
 fi
 CP="$DL/android-all.jar:$XAPI:$DL/nanohttpd.jar"
 KSTDLIB=${KSTDLIB:-$(dirname "$KOTLINC")/../lib/kotlin-stdlib.jar}
@@ -29,7 +29,7 @@ rm -rf "$OUT"
 mkdir -p "$OUT/classes" "$OUT/dex" "$OUT/assets" "$OUT/META-INF/xposed"
 
 STAMP=$(date +%m%d-%H%M%S)
-BT=app/src/main/kotlin/com/xiandehuang/u/BuildTag.kt
+BT=app/src/main/kotlin/io/github/tancan1998/uxian/BuildTag.kt
 python3 - "$BT" "$STAMP" <<'PY'
 import re, sys
 p, stamp = sys.argv[1], sys.argv[2]

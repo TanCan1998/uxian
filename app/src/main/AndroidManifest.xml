@@ -23,11 +23,11 @@
             android:noHistory="true" />
         <provider
             android:name="io.github.libxposed.service.XposedProvider"
-            android:authorities="com.xiandehuang.u.XposedService"
+            android:authorities="io.github.tancan1998.uxian.XposedService"
             android:exported="true" />
         <provider
             android:name=".ScopeProbeProvider"
-            android:authorities="com.xiandehuang.u.scope"
+            android:authorities="io.github.tancan1998.uxian.scope"
             android:exported="true" />
     </application>
 </manifest>

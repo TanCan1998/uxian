@@ -1,4 +1,4 @@
-package com.xiandehuang.u
+package io.github.tancan1998.uxian
 
 import java.io.File
 import java.lang.reflect.Proxy
