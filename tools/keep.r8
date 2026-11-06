@@ -1,0 +1,68 @@
+# ---- 自有类：模块被框架反射加载、provider 被系统实例化，R8 无从得知入口 ----
+-keep class com.xiandehuang.u.** { *; }
+
+# ---- kotlin stdlib：必须整体保留 ----
+# 踩过的坑：R8 的 shrinker 会把 kotlin.jvm.internal.ArrayIterator.hasNext()
+# 之类当"未使用"裁掉，产出 AbstractMethodError
+# "boolean java.util.Iterator.hasNext()"，宿主进程里所有 for 循环抛错、
+# hook 一个都装不上（实测 instanceHooks=0 / tapHooks=0）。
+# 不整体 keep kotlin：让 R8 正常收缩 stdlib（体积收益最大的一项）
+
+-dontwarn kotlin.**
+-dontwarn kotlinx.**
+
+# ---- libxposed：框架侧反射调用 ----
+-keep class io.github.libxposed.** { *; }
+
+# NanoHTTPD：反射+匿名内部类多，整体 keep 最省事
+
+-dontwarn org.slf4j.**
+-dontwarn io.github.libxposed.**
+
+# ---- 编译期可见性 ----
+
+# ---- 保留行号，崩溃栈才有用 ----
+-keepattributes SourceFile,LineNumberTable
+
+# JDK 的 java.* 类 android-all.jar 里没有（它只含 android.*），
+# 但代码会用到 BufferedReader / Pattern / GZIPInputStream 等，必须放行
+-dontwarn java.**
+-dontwarn javax.**
+-dontwarn android.**
+
+# ---- Kotlin 的 SAM 转换目标必须保留 ----
+# 踩过的坑：R8 会把 lambda -> Runnable 的合成类优化坏，运行时抛
+# AbstractMethodError: abstract method "void java.lang.Runnable.run()"，
+# 宿主直接闪退（Handler.post{}、Thread{} 全是这种）。
+
+# ---- java.lang / java.util 必须整体保留 ----
+# 踩过的坑：R8 会裁掉这些接口的方法（比如 Runnable.run()），
+# Kotlin 的 lambda -> SAM 转换生成的类继承它们后运行时抛
+# AbstractMethodError: abstract method "void java.lang.Runnable.run()"，
+# 宿主进程直接闪退（Handler.post{} / Thread{} 全是这种）。
+# 这些类本来就由 Android 运行时提供，keep 只影响 R8 的判断，不增加体积。
+-keep class java.lang.** { *; }
+-keep class java.util.** { *; }
+-keep class java.util.concurrent.** { *; }
+-keep class java.io.** { *; }
+-keep class java.nio.** { *; }
+-keep class java.text.** { *; }
+-keep class java.security.** { *; }
+-keep class java.util.zip.** { *; }
+-keep class java.util.regex.** { *; }
+# 接口的默认方法会被 R8 单独裁掉 —— 只 keep class java.util.** 是不够的：
+# 实测 java.util.Collection.toArray() 变成抽象方法，
+# ArrayList.<init>(Collection) → AbstractMethodError，崩在调用方的 <clinit>。
+-keep interface java.util.Collection { *; }
+-keep interface java.util.List { *; }
+-keep interface java.util.Set { *; }
+-keep interface java.util.Map { *; }
+-keep interface java.lang.Iterable { *; }
+-keep interface java.lang.CharSequence { *; }
+
+# 临时：排查 accept 不返回问题（官方文档：仅用于隔离问题）
+-dontoptimize
+
+# NanoHTTPD：反射+匿名内部类多，整体 keep
+-keep class fi.iki.elonen.** { *; }
+-dontwarn fi.iki.elonen.**

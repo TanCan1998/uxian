@@ -1,0 +1,66 @@
+name: Android CI
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Fetch and verify pinned build tools
+        run: python3 tools/bootstrap.py
+      - name: Install Python build dependencies
+        run: python3 -m pip install -r requirements-build.txt
+      - name: Run local contract regressions
+        run: DL="$PWD/.tools" KLIB="$PWD/.tools/kotlin/kotlinc/lib" sh tools/temp-capture-tests/run.sh
+      - name: Build and verify APK
+        env:
+          RELEASE_KEYSTORE: ${{ secrets.RELEASE_KEYSTORE }}
+          SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "$RELEASE_KEYSTORE" ]]; then
+            printf '%s' "$RELEASE_KEYSTORE" | base64 --decode > "$RUNNER_TEMP/release.jks"
+          else
+            if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+              echo 'Tagged releases require the persistent RELEASE_KEYSTORE secret' >&2
+              exit 1
+            fi
+            SIGNING_PASSWORD=$(openssl rand -hex 24)
+            echo "::add-mask::$SIGNING_PASSWORD"
+            export SIGNING_PASSWORD
+            keytool -genkeypair -keystore "$RUNNER_TEMP/release.jks" -storepass:env SIGNING_PASSWORD -keypass:env SIGNING_PASSWORD -alias release -dname 'CN=CI Test Build' -keyalg RSA -keysize 3072 -validity 30 > /dev/null 2>&1
+          fi
+          export SIGNING_KEYSTORE="$RUNNER_TEMP/release.jks"
+          trap 'rm -f "$SIGNING_KEYSTORE"' EXIT
+          sh tools/build.sh new
+          mkdir -p dist
+          cp "build/new/U闲.apk" "dist/uxian.apk"
+          cd dist
+          sha256sum uxian.apk > SHA256SUMS
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: uxian-apk
+          path: dist/
+          if-no-files-found: error
+      - name: Publish tagged release and module distribution
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODULE_REPO_TOKEN: ${{ secrets.MODULE_REPO_TOKEN }}
+        run: python3 tools/publish_release.py
+    permissions:
+      contents: write
