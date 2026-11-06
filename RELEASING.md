@@ -15,3 +15,10 @@ PR 构建没有发布密钥时生成一次性测试证书；标签正式发布�
 
 
 旧包名已被官方机器人拒绝（U闲 #2460 / U音 #2461）；现发行采用 GitHub 前缀包名。旧发行资产保留历史，新包名必须重新提交官方收录审核。
+
+
+## 官方模块仓库（2026-11-06 已批准）
+
+官方登记 [#2462](https://github.com/Xposed-Modules-Repo/submission/issues/2462) 已获 XposedBot 批准。官方仓库：https://github.com/Xposed-Modules-Repo/io.github.tancan1998.uxian 。中文简介、README、SUMMARY、GPL 原文与首个 APK Release 已发布；官方 APK 与对应源码 Release 的 SHA-256 一致。网页目录/客户端索引可能有延迟，不能仅凭仓库已发布推定索引已经刷新。旧包名个人模块仓库已按维护者要求删除。
+
+日常 CI 仍自动发布到维护者个人模块分发仓库；当前 fine-grained Token 无官方组织的写权限，官方仓库本次通过已登录网页初始化与发布，后续官方同步需组织可用凭据或继续网页操作。

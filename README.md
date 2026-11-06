@@ -56,3 +56,10 @@ sh tools/build.sh new
 官方机器人拒绝旧包名 `com.xiandehuang.u` 的域名验证。本发行版改为 `io.github.tancan1998.uxian`，源码命名空间、模块入口、资源包名、Provider authority、重启 action 和调用方检查均同步迁移。旧版 Release 仅保留历史，不应与新版同时启用在同一宿主。
 
 新旧包名不同，无法原地覆盖。迁移时请先停用旧模块，再安装并启用新版、设置宿主作用域后重启宿主；不要同时启用两份模块。模块发行签名继续使用原项目的持久签名。当前已装模块未在本次发布中替换。宿主私有配置键维持原样，但新包名发行版尚未完成真机回归，不能把旧安装版的实测结论视为新版验收。
+
+
+## 官方模块仓库（2026-11-06 已批准）
+
+官方登记 [#2462](https://github.com/Xposed-Modules-Repo/submission/issues/2462) 已获 XposedBot 批准。官方仓库：https://github.com/Xposed-Modules-Repo/io.github.tancan1998.uxian 。中文简介、README、SUMMARY、GPL 原文与首个 APK Release 已发布；官方 APK 与对应源码 Release 的 SHA-256 一致。网页目录/客户端索引可能有延迟，不能仅凭仓库已发布推定索引已经刷新。旧包名个人模块仓库已按维护者要求删除。
+
+日常 CI 仍自动发布到维护者个人模块分发仓库；当前 fine-grained Token 无官方组织的写权限，官方仓库本次通过已登录网页初始化与发布，后续官方同步需组织可用凭据或继续网页操作。
