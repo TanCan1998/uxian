@@ -19,6 +19,8 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Install Linux build utilities
+        run: sudo apt-get update -qq && sudo apt-get install -y ripgrep
       - name: Fetch and verify pinned build tools
         run: python3 tools/bootstrap.py
       - name: Install Python build dependencies
