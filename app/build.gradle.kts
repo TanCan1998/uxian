@@ -11,8 +11,8 @@ android {
         applicationId = "io.github.tancan1998.uxian"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.1"
+        versionCode = 11061731
+        versionName = "1.0"
     }
 
     buildTypes {
